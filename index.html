@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <link data-require="bootstrap@*" data-semver="4.1.3" rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" />
+    <script data-require="bootstrap@*" data-semver="4.1.3" src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <script src="app.js"></script>
+    <script src="directives.js"></script>
+    <script src="controller.js"></script>
+    <script src="services.js"></script>
+    
+  </head>
+
+  <body ng-app="todo" ng-controller="TodoCtrl">
+  
+  <div class="container">
+    <todo-title></todo-title>
+    <todo-form></todo-form>
+    
+    <ul class="list-unstyled">
+      <li ng-repeat="todo in todos | filter:statusFilter">
+        <todo-item></todo-item>
+      </li>
+    </ul>
+    
+    <todo-filters></todo-filters>
+  </div>
+  </body>
+
+</html>
